@@ -46,6 +46,7 @@ node('angular-slave') {
             jenkinsLibrary.angularBuild(params)
             dockerImage = jenkinsLibrary.dockerize(params)
             jenkinsLibrary.pushDockerImageToRepo(dockerImage, params)
+            jenkinsLibrary.deployToKubernetes(params)
         } catch (Exception err) {
             currentBuild.result = 'FAILURE'
             throw err

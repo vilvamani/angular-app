@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: springboot-app
+        app: angular-app
     spec:
       containers:
         - name: angular-app

@@ -5,7 +5,8 @@ properties([
     buildDiscarder(logRotator(daysToKeepStr: '7', numToKeepStr: '10'))
 ])
 
-current_branch = "main"
+//current_branch = "main"
+current_branch = "${env.BRANCH_NAME}"
 
 jenkins_common_branch = "develop"
 jenkins_common_repo_url = "https://github.com/vilvamani/jenkins_common_library.git"

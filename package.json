@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --prod --build-optimizer",
     "test": "ng test",
     "test-headless": "ng test --single-run --browsers Chrome_no_sandbox --code-coverage --reporters=coverage-istanbul",
     "lint": "ng lint",

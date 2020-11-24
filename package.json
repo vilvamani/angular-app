@@ -8,6 +8,7 @@
     "build": "ng build --prod --build-optimizer",
     "test": "ng test",
     "test-headless": "ng test --single-run --browsers Chrome_no_sandbox",
+    "code-coverage": "ng test --single-run --browsers Chrome_no_sandbox --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sonar": "sonar-scanner"

@@ -38,15 +38,7 @@ node('angular-slave') {
     jenkinsLibrary.defaultConfigs(params)
     timestamps {
         try {
-            jenkinsLibrary.checkOutSCM(params)
-            jenkinsLibrary.installNodeModules(params)
-            jenkinsLibrary.angularUnitTests(params)
-            jenkinsLibrary.angularPublishTest(params)
-            jenkinsLibrary.angularLint(params)
-            jenkinsLibrary.angularBuild(params)
-            dockerImage = jenkinsLibrary.dockerize(params)
-            jenkinsLibrary.pushDockerImageToRepo(dockerImage, params)
-            jenkinsLibrary.deployToKubernetes(params)
+            jenkinsLibrary.angularBuildAndDeploy(params)
         } catch (Exception err) {
             currentBuild.result = 'FAILURE'
             throw err

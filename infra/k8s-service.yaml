@@ -1,7 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: angular-app-svc
+  name: angular-svc
+  labels:
+    app.kubernetes.io/name: angular-microservice
+    app.kubernetes.io/component: microservice
 spec:
   type: NodePort
   ports:
@@ -9,4 +12,5 @@ spec:
       port: 8080
       targetPort: 8080
   selector:
-    app: angular-app
+    app.kubernetes.io/name: angular-microservice
+    app.kubernetes.io/component: microservice

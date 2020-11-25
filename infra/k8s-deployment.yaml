@@ -1,19 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: angular-app
+  name: angular-microservice
+  labels:
+    app.kubernetes.io/name: angular-microservice
+    app.kubernetes.io/component: microservice
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: angular-app
+        app.kubernetes.io/name: angular-microservice
+        app.kubernetes.io/component: microservice
   template:
     metadata:
       labels:
-        app: angular-app
+        app.kubernetes.io/name: angular-microservice
+        app.kubernetes.io/component: microservice
     spec:
       containers:
-        - name: angular-app
+        - name: angular-microservice
           image: IMAGE
           imagePullPolicy: IfNotPresent
           ports:

@@ -40,6 +40,9 @@ node('angular-slave') {
     timestamps {
         try {
             jenkinsLibrary.angularBuildAndDeploy(params)
+        } catch (NoSuchMethodError err) {
+            currentBuild.result = 'FAILURE'
+            throw err
         } catch (Exception err) {
             currentBuild.result = 'FAILURE'
             throw err
